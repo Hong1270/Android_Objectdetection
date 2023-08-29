@@ -29,4 +29,4 @@ Method 파일(PrePostProcessor, ResultView) => Java 파일
 ## 결과 화면
 [<img width="374" alt="image" src="https://github.com/Hong1270/Android_Objectdetection/assets/82353544/a1ffb5e1-6bfc-4205-afdc-27e3c2fbbc08">]
 
-[참고 코드 - Pytorch](https://discuss.pytorch.kr/t/yolo5/379)
+[참고 코드 - Pytorch]([https://discuss.pytorch.kr/t/yolo5/379](https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection)https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection)
