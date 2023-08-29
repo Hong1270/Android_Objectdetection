@@ -5,9 +5,7 @@
    - f = file.with_suffix('.torchscript.pt') 뒤에 fl = file.with_suffix('.torchscript.ptl') 추가
    - (optimize_for_mobile(ts) if optimize else ts).save(f) 뒤에 (optimize_for_mobile(ts) if optimize else ts)._save_for_lite_interpreter(str(fl)) 추가
 2. 수정된 모델 파일 저장
-  ```
-   python export.py --weights yolov5s.pt --include torchscript
-   ```
+   ```python export.py --weights yolov5s.pt --include torchscript```
 
 
 ## Android Studio File
@@ -19,6 +17,10 @@ Method 파일(PrePostProcessor, ResultView) => Java 파일
 - PrePostProcessor.java : NMS(임계치 이하의 객체 인식 결과 제거 및 겹치는 객체 인식 Bounding Box 제거)
 - ResultView.java : Bitmap에 Bounding box 그리기
   *Bounding box = 객체를 인식한 구역에 그려진 사각형 박스
+
+  ### PrePostProcessor
+  아래의 코드에서 58 부분을 (라벨 개수 + 5)의 숫자로 변경
+  ```private static int mOutputColumn = 58; // left, top, right, bottom, score and 53 class probability```
 
 ## 결과 화면
 [<img width="374" alt="image" src="https://github.com/Hong1270/Android_Objectdetection/assets/82353544/a1ffb5e1-6bfc-4205-afdc-27e3c2fbbc08">]
