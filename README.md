@@ -19,3 +19,6 @@ Method 파일(PrePostProcessor, ResultView) => Java 파일
 - PrePostProcessor.java : NMS(임계치 이하의 객체 인식 결과 제거 및 겹치는 객체 인식 Bounding Box 제거)
 - ResultView.java : Bitmap에 Bounding box 그리기
   *Bounding box = 객체를 인식한 구역에 그려진 사각형 박스
+
+## 결과 화면
+[<img width="374" alt="image" src="https://github.com/Hong1270/Android_Objectdetection/assets/82353544/a1ffb5e1-6bfc-4205-afdc-27e3c2fbbc08">]
