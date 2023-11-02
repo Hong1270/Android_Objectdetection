@@ -1,16 +1,33 @@
 # Android_Objectdetection
 
-## Model 수정하기
+## Environment
+- Android Studio Giraffe | 2022.3.1 Patch 1
+
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="80" height="80"/> </a> <a href="https://kotlinlang.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg" alt="kotlin" width="80" height="80"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="80" height="80"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="80" height="80"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="80" height="80"/> </a> </p>
+
+## Tutorial   (**인공지능 모델 학습 부터 앱 결합 까지**)
+### 1. Yolov5 모델 학습
+[Yolov5 인공지능 모델 학습 Tutorial 공식 버전] (https://github.com/ultralytics/yolov5/blob/master/tutorial.ipynb)
+
+   => 3번 Train 참고
+### 2. 인공지능 모델 TorchScript lite 버전으로 수정
 1. [YOLOV5](https://github.com/ultralytics/yolov5)의 export.py에서 코드 수정
    - f = file.with_suffix('.torchscript.pt') 뒤에 fl = file.with_suffix('.torchscript.ptl') 추가
    - (optimize_for_mobile(ts) if optimize else ts).save(f) 뒤에 (optimize_for_mobile(ts) if optimize else ts)._save_for_lite_interpreter(str(fl)) 추가
 2. 수정된 모델 파일 저장
-   ```
+   ```cmd
    python export.py --weights yolov5s.pt --include torchscript
    ```
+### 3. Android Studio + Yolov5
+   1. Pytorch Code Clone
+   2. assets 폴더 생성
+      - .torchscript (사용자 학습 인공지능 모델 파일)
+      - .txt (label명이 들어있는 파일)
+   3. 
+      라벨 유형에 맞게 수정
 
-
-## Android Studio File
+## Android Studio Files
 
 MainActivity => Kotlin 파일
 Method 파일(PrePostProcessor, ResultView) => Java 파일
