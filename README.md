@@ -28,6 +28,17 @@
 ### 3. Android Studio + Yolov5
    1. Pytorch Code 참고
    [참고 코드 - Pytorch, yolov5](https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection)
+
+   2. build.gradle 
+
+    <수정 Code>
+    minSdk 28
+    targetSdk 33
+    
+    <추가 Code>
+    //    Pytorch
+        implementation 'org.pytorch:pytorch_android_lite:1.12.2'
+        implementation 'org.pytorch:pytorch_android_torchvision_lite:1.12.2'
    3. assets 폴더 생성(app/src/main/assets)
       아래의 하위 파일을 해당 폴더로 이동
       - .torchscript.ptl (사용자 학습 인공지능 모델 파일)
